@@ -28,6 +28,10 @@ body {
   color: $darkGray;
 }
 
+article {
+  width: 100%;
+}
+
 .container {
   margin: 0 auto;
   max-width: 740px;
@@ -252,7 +256,6 @@ nav {
 }
 
 .posts > .post {
-  flex-grow: 1;
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 }
