@@ -17,7 +17,12 @@ html {
   font-size: 100%;
 }
 
+
 body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
@@ -241,7 +246,13 @@ nav {
 // .main
 //
 
+#main {
+  display: flex;
+  flex-grow: 1;
+}
+
 .posts > .post {
+  flex-grow: 1;
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 }
@@ -272,10 +283,12 @@ nav {
 }
 
 .wrapper-footer {
+  
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+  width: 100%;
 }
 
 footer {
