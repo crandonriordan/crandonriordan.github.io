@@ -372,7 +372,7 @@ Currently the Engine class constructor needs a Board and a Renderer. I'm not ent
 
 The UI is also horrendous. While I enjoy the colors, the game seem to take up too many spaces and creates to many new lines. I can improve this by reducing the amount of empty space. Also, I don't believe the way I'm asking for a save or load is all that user friendly. I could instead ask a [Y/N] type of question. Maybe a prompt like: "Do you wish to save or load [s/l]?" This reduces the prompt to one line and isn't too __annoying__.
 
-All in all, this project reinforced the learning from previous chapters of the book and also led to learn about how .NET can serialize data and a little bit about the List<> type and its utility. I'm happy with the finished project and will be writing a run down of a new project shortly.
+All in all, this project reinforced the learning from previous chapters of the book and also led me to learn about how .NET can serialize data and a little bit about the List<> type and its utility. I'm happy with the finished project and will be writing a run down of a new project shortly.
 
 
 
