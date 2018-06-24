@@ -3,7 +3,7 @@ layout: post
 title: Learning C# with Tic Tac Toe
 ---
 
-In C# Players Guide after learning about classes in C#, R.B. Whitaker has a Try-It-Yourself for a Tic-Tac-Toe game to solidify the learning of enums, classes, class variables and methods.
+In C# Player's Guide after learning about classes in C#, R.B. Whitaker has a Try-It-Yourself for a Tic-Tac-Toe game to solidify the learning of enums, classes, class variables and methods.
 
 The requirements for this Tic-Tac-Toe game were as follows:
 - The game is console-based.
@@ -37,7 +37,7 @@ class Player
         // ensure our player has a correct piece for tic tac toe
         if(piece != "X" && piece != "O")
         {
-            this.Piece = GetValidPiece(); 
+            this.Piece = GetValidPiece();
         }
 
         this.Piece = piece;
@@ -86,13 +86,13 @@ class Board
             newPosition = GetValidPositionFromUser();
             this.setPiece(player, newPosition); // call setPiece function again with a correct position.
         }
-        
+
     }
 
     public int GetValidPositionFromUser()
     {
         int validInput = -1;
-        
+
         while(validInput < 0)
         {
             Console.WriteLine();
@@ -110,7 +110,7 @@ class Board
 }
 ```
 
-The Renderer class will be given a Board and simply render the board. While we could have a method in the board class that renders itself, I think this helps keep our classes simpler. 
+The Renderer class will be given a Board and simply render the board. While we could have a method in the board class that renders itself, I think this helps keep our classes simpler.
 
 ```csharp
 class Renderer
@@ -149,7 +149,7 @@ class WinCondition
 
     public List<int[]> WinConditions { get; private set; }
     public Board Board { get; private set; }
-    
+
     public WinCondition(Board board)
     {
         WinConditions = new List<int[]>
@@ -174,7 +174,7 @@ class WinCondition
         WinConditions.ForEach(setOfWinConditions =>
         {
 
-            if(Board.BoardPieces[setOfWinConditions[0]] == playerPiece && 
+            if(Board.BoardPieces[setOfWinConditions[0]] == playerPiece &&
             Board.BoardPieces[setOfWinConditions[1]] == playerPiece
             && Board.BoardPieces[setOfWinConditions[2]] == playerPiece)
             {
@@ -190,7 +190,7 @@ class WinCondition
 
 Finally our class that will run the game for us is the Engine class. This Engine class will ask for the information needed to create two players and will automatically make us a WinCondition class. The parameters for the constructor will be a Board and a Renderer. I believe that I could make the Engine run without needing to have any parameters. I'm not entirely sure why I didn't but we'll discuss that later. We'll also discuss the Save() and Load() methods as this wasn't a requirement and something I added to learn a little about Object serialization. Side note: the best learning experience for me when it comes to Object serialization was serializing and object and deserializing an object in Ruby by reading and writing to a file and parsing the text. [Here's a link](https://github.com/crandonriordan/hangman-ruby) to the GitHub project where this was done.
 
-The Start() method will start the game up and if no player wins after the 9th loop it will decide it's a draw. Our sequence of events for the Start() is 
+The Start() method will start the game up and if no player wins after the 9th loop it will decide it's a draw. Our sequence of events for the Start() is
 1. "X" player goes first.
 2. Check for a valid move.
 3. Set piece if the move is valid.
@@ -276,7 +276,7 @@ class Engine
             numOfTurns++;
         }
 
-        
+
 
 
     }
@@ -373,16 +373,3 @@ Currently the Engine class constructor needs a Board and a Renderer. I'm not ent
 The UI is also horrendous. While I enjoy the colors, the game seem to take up too many spaces and creates to many new lines. I can improve this by reducing the amount of empty space. Also, I don't believe the way I'm asking for a save or load is all that user friendly. I could instead ask a [Y/N] type of question. Maybe a prompt like: "Do you wish to save or load [s/l]?" This reduces the prompt to one line and isn't too __annoying__.
 
 All in all, this project reinforced the learning from previous chapters of the book and also led to learn about how .NET can serialize data and a little bit about the List<> type and its utility. I'm happy with the finished project and will be writing a run down of a new project shortly.
-
-
-
-
-
-
-
-
-
-
-
-
-
